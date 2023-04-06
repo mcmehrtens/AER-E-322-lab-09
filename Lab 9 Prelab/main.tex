@@ -203,12 +203,20 @@ The C-scan creates a 2-D graph of the top-down view of a specimen. The plot is g
 
 \textbf{Solution:}
 
+Eddy current testing utilizes electromagnetic probes that apply an alternating electric current to a substance. This electricity creates eddy currents (EC) which are disturbed by flaws in the material.
 
+There are two types of probes: an absolute probe which uses a single coil and a differential probe which uses two coil elements. Using either probe, it's important to zero out the probes frequently by taking measurements on a ``defect-free'' sample.
+
+The test works due to the skin effect, \ie the effect that causes eddy current density to decrease deeper in a material. The EC penetration depth can be calculated with the equation
+\begin{align}
+	\delta&\approx\frac{1}{\sqrt{\pi{}f\mu\sigma}}
+\end{align}
+where $\delta$ is the penetration depth, $f$ is the frequency, $\mu$ is the magnetic permeability of the material, and $\sigma$ is the electrical conductivity of the material.
 
 \section*{Question 8}
 (\num{10} points) \textit{Why is eddy current testing useful for sorting out metallic materials?}
 
 \textbf{Solution:}
 
-
+The absolute EC sensor is especially good at measuring defects in metallic material because its very sensitive to electrical conductivity and magnetic conductivity. Since metallic materials are generally great conductors, this makes EC tests especially effective. The material properties of metallic materials allow the EC sensors to detect very fine or minute defects.
 \end{document}
