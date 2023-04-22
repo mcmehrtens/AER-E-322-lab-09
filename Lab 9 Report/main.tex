@@ -211,70 +211,63 @@ We predict the flaws in the honeycomb layer of the testing sample will be visibl
 \chapter{Lab Work} \label{lab_work}
 \section{Variables} \label{variables}
 \subsection{Independent Variables} \label{variables-independent_variables}
-% TODO: Revise
 \textbf{Ultrasonic Testing}
 
 \begin{itemize}
-	\item Position of transducer: the result shown on the oscilloscope will be changed by where pulser is going for.
-	\item Distance between transducer and displacement:
-	\item Depth of water: In this lab, the depth is constant.
-	\item Distance between receiver and displacement: By changing the distance, focal length will be changed.
-	\item Pulser frequency: The ultrasonic wave goes through the specimen. If frequency is so high, the amplitude shown on oscilloscope will be bigger overall.
+	\item Position of transducer: the physical position of the transducer relative to the sample.
+	\item Water Path: the distance between the transducer head and the top surface of the sample.
 \end{itemize}
 
 \textbf{Ultrasonic Testing Simulation}
 
 \begin{itemize}
-	\item Frequency: the frequency of ultrasonic pulser.
-	\item Transducer diameter:
-	\item Focal length: If the transducer is the focus type.
+	\item Water Path: the distance between the transducer head and the to surface of the sample.
+	\item Transducer diameter: changes the diameter of the waves emitted from the end of the transducer.
+	\item Focal Length: the optimal distance a specimen should be placed from the transducer head.
 	\item Center Frequency: the frequency at the center of the range of transducer frequency.
-	\item Bandwidth: A measure of the range of frequency in the beam.
 \end{itemize}
 
 \textbf{Eddy Current Testing}
 
 \begin{itemize}
-	\item Lift off speed: This speed contributes to the shape of the plot.
-	\item Material property: This property decides the shape of line on the plot.
-	\item High pass filter (HP): this value decide how low frequency is allowed. If frequency is higher than high pass filter, it will be removed from data. This value works for smoothing data.
-	\item Low pass filter (LP): As Low pass filter, the frequency less than low pass filter will be removed from data.
-	\item Frequency: In the surface crack detection, this value is recommended to set to below \qty{10}{\kilo\hertz}.
-	\item Gain: In this lab, gain is set as \qty{45}{\decibel}. This value determines the scale of plot as frequency.
-	\item Shape of specimen:
+	\item Material Property: this property decides the shape and direction of trace on the plot.
+	\item High Pass Filter (HP): if the frequency is higher than the high pass filter, it will be removed from the data. This value helps smooth data.
+	\item Low Pass Filter (LP): if the frequency is lower than the lower pass filter, it will be removed from the data. This value helps smooth data.
+	\item Frequency: for surface crack detection, this value is recommended to be set to below \qty{10}{\kilo\hertz}.
+	\item Gain: how much the recorded traces should be amplified. Setting this value too high will result in traces exceeding the bounds of the graph. Setting this value too low will result in traces being barely visible in the graph.
+	\item Defects: any defects in the material, \eg ridges or changes in thickness, will be recorded in the traces displayed on the software graph.
 \end{itemize}
 
 \textbf{Tap Testing}
 
 \begin{itemize}
-	\item The force for tapping: If we tap specimen too weakly, the tap head response errors on the cell.
+	\item Scan Increment: the density of taps in a given area. The lower the scan increment, the more taps will be recorded in a given area. Lower scan increments result in higher resolution results, but require more taps.
+	\item Cell Configuration: the number of cells to be tapped in two dimensions.
 \end{itemize}
 
 \subsection{Dependent Variables} \label{variables-dependent_variables}
-% TODO: Revise
 \textbf{Ultrasonic Testing}
 
 \begin{itemize}
-	\item Defect amplitude: we will modify the scale of oscilloscope to check the shape of wave.
+	\item Amplitude: the amplitudes displayed on the oscilloscope signifying the transducer head, the top surface of the sample, the bottom surface of the sample, and---if positioned correctly---the defect surface of the sample.
 \end{itemize} 
 
 \textbf{Ultrasonic Testing Simulation}
 
 \begin{itemize}
-	\item Defect amplitude: Defect amplitude shape will not be smoothed if the suitable values are not given to the independent variables.
-	\item Defect signal to Peak noise ratio: the ratio shows the gap between signal and noise.
+	\item Signal-To-Noise Ratio (SNR): a measure of how clearly a signal is being recorded relative to the noise floor.
 \end{itemize}
 
 \textbf{Eddy Current Testing}
 
 \begin{itemize}
-	\item Displacement: this is shown on the graph plotted while testing.
+	\item Eddy Current String: this is a sensitive measurement that changes based on the physical structure or composition of the sample.
 \end{itemize}
 
 \textbf{Tap Testing}
 
 \begin{itemize}
-	\item Displacement: the result gotten by tapping will be shown on the screen when clicking graph or contour.
+	\item Contact Time: a very precise measurement used to build an internal image of a structure based on how long it takes force to propagate through a material.
 \end{itemize} 
 
 \section{Work Assignments} \label{work_assignments}
@@ -503,16 +496,61 @@ To sort the metal samples, make the necessary adjustments to phase angle, freque
 
 Firstly, set up the tap test software, and try a few gentle taps on the surface, holding the tap head on the metal part in the upper position. Take care not to tap strongly on the surface, or the tap head will be damaged and affect the test result. After checking, tape a plastic grid sheet on the specimen, adjusting the end of the cell we will measure. Before starting the test, click the test start button on the software while entering the column and the row number we will tap.
 
-Start to tap from the top and leftmost cell and continue by tapping a cell along a row. After tapping all cells in a row, move to the cell located leftmost in the next row, and continue to do it until the last row. When the test is finished, check whether tapping errors is shown on the screen, and fix errors by re-tapping the same cell. Stop the test by clicking on the button on the software after checking errors, plot the contour of defects, and save the figure as an image on a drive.   
+Start to tap from the top and leftmost cell and continue by tapping a cell along a row. After tapping all cells in a row, move to the cell located leftmost in the next row, and continue to do it until the last row. When the test is finished, check whether tapping errors is shown on the screen, and fix errors by re-tapping the same cell. Stop the test by clicking on the button on the software after checking errors, plot the contour of defects, and save the figure as an image on a drive.
+
+\newpage
 
 \section{Data} \label{data}
 \textbf{Ultrasonic Testing}
 
 For the ultrasonic testing lab, we calculated the optimal water path to be \qty{113.1}{\mm}. Based on this calculation, the time delta from the transducer pulse and the top surface was \qty{152.8}{\micro\second}. Since we know the thickness and wave travel speed through the sample material, we were able to calculate the time delta for the sample to be \qty{7.931}{\micro\second}. Adding these two time deltas together yielded \qty{160.7}{\micro\second}. Just before the pulse at \qty{160.7}{\micro\second} was the location of the defect signal. The script we used to calculate these values is shown in Appendix \ref{apdx:code}.
 
+\newpage
+
 \textbf{Simulated Ultrasonic Testing}
 
+For brevity, only three of the \num{17} simulated ultrasonic simulations are included in this report. Table \ref{tbl:sut} shows the different configuration for each of the simulations shown in this section.
 
+\begin{table}[!htbp]
+\caption{Software configuration settings for the three tests shown in this lab.}
+\begin{center}
+	\begin{tabular}{ccccc}
+		\toprule
+		Test&Trans. Diamater (\unit{in})&Focal Length (\unit{in})&Center Freq. (\unit{\mega\hertz})&Water Path (\unit{in})\\
+		\midrule
+		1&\numproduct{1x1}&\numproduct{5x5}&\num{5}&\num{2}\\
+		7&\numproduct{2x2}&\numproduct{4x4}&\num{5}&\num{0.5}\\
+		15&\numproduct{0.5x0.5}&\numproduct{3x3}&\num{10}&\num{0.5}\\
+		\bottomrule
+	\end{tabular}
+\end{center}
+\label{tbl:sut}
+\end{table}
+
+Shown in Figures \ref{fig:sut_1}, \ref{fig:sut_2}, and \ref{fig:sut_3} are the results for the initial configuration, the our best configuration---found by manipulating the transducer diameter---and our second-best configuration---found by manipulating the center frequency.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=6in]{images/graphs/simulated ultrasonic testing/s4_g2_i1_1}
+	\caption{The SNR data from the initial configuration of the simulated ultrasonic test.}
+	\label{fig:sut_1}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=6in]{images/graphs/simulated ultrasonic testing/s4_g2_i1_7}
+	\caption{The SNR data from the best configuration of the simulated ultrasonic test; found by manipulating the transducer diameter.}
+	\label{fig:sut_2}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=6in]{images/graphs/simulated ultrasonic testing/s4_g2_i1_15}
+	\caption{The SNR data from the second-best configuration of the simulated ultrasonic test; found by manipulating the center frequency.}
+	\label{fig:sut_3}
+\end{figure}
+
+\newpage
 
 \textbf{Eddy Current Testing}
 
@@ -570,6 +608,8 @@ The traces for the metal sample sorting test are shown in Figure \ref{fig:ec_met
 	\caption{The traces recorded from the EddyCation software for the metal sorting testing. Each trace is labeled according to what metal it is (note: we may have misspelled some of the labels; our notes were not entirely clear).}
 	\label{fig:ec_metal_sorting}
 \end{figure}
+
+\newpage
 
 \textbf{Tap Testing}
 
@@ -641,14 +681,13 @@ The results of this tap test are shown in Figures \ref{fig:tt2_grid}, \ref{fig:t
 \section{Analysis} \label{analysis}
 \subsection{Tap Testing} \label{tap_testing}
 % TODO: Revise
-% TODO: FIX FIGURE REFERENCES
 \textbf{Question 1}
 
-Areas with delamination and core unbonds were tested in tap test \num{1}; the crushed core was tested in tap test \num{2}. As seen in Figure <INSERT FIG REFERENCE> above, delamination was much easier to detect than core unbonds. There is a clear detection of the first two defect areas in the delamination zone, but the third was undetectable. In the defect areas where there were core unbonds, there is a slight section where the tap duration was somewhere between \qtyrange{415}{495}{\micro\second}. This is especially seen in the largest defect area, but as the test continued, the smallest defect area was completely undetectable. Moving to tap test two, the defect areas where much more detectible. Starting from the left defect region, the two largest defect areas were extremely noticeable. It is clear to see that the medium sized defect had a largest duration of \qtyrange{638}{688}{\micro\second}, and the largest area had a duration of \qtyrange{738}{788}{\micro\second}. Moving to the right side of the defect area, all three defects were detected. The smallest had a barely noticeable defect, but was still present with a duration of \qtyrange{438}{488}{\micro\second}. The other two defect areas had a duration of \qtyrange{738}{788}{\micro\second}. This shows that the defects in the .187 area were much more difficult to detect than that of the defects in the .25 defect area. Alongside this, delamination was easier to detect than the core unbonds. Overall, the crushed core was the easiest to detect of all three defects.
+Areas with delamination and core unbonds were tested in tap test \num{1}; the crushed core was tested in tap test \num{2}. As seen in Figure \ref{fig:tt1_2d} above, delamination was much easier to detect than core unbonds. There is a clear detection of the first two defect areas in the delamination zone, but the third was undetectable. In the defect areas where there were core unbonds, there is a slight section where the tap duration was somewhere between \qtyrange{415}{495}{\micro\second}. This is especially seen in the largest defect area, but as the test continued, the smallest defect area was completely undetectable. Moving to tap test two, the defect areas where much more detectible. Starting from the left defect region, the two largest defect areas were extremely noticeable. It is clear to see that the medium sized defect had a largest duration of \qtyrange{638}{688}{\micro\second}, and the largest area had a duration of \qtyrange{738}{788}{\micro\second}. Moving to the right side of the defect area, all three defects were detected. The smallest had a barely noticeable defect, but was still present with a duration of \qtyrange{438}{488}{\micro\second}. The other two defect areas had a duration of \qtyrange{738}{788}{\micro\second}. This shows that the defects in the .187 area were much more difficult to detect than that of the defects in the .25 defect area. Alongside this, delamination was easier to detect than the core unbonds. Overall, the crushed core was the easiest to detect of all three defects.
 
 \textbf{Question 2}
 
-Even with the \qty{0.25}{in} spacing, the smaller defects were difficult to detect especially in the tap tests with unbonds and delaminations. As seen in Figures <INSERT FIG REFERENCE> and <INSERT FIG REFERENCE>, the smaller defects were either completely undetectable or were extremely difficult to detect. If the tap spacing increased to \qty{0.5}{in}, our group suspects that this would have a profound effect on the ability to detect defects. As the smaller defects were barely detectable at \qty{0.25}{in} spacing, the medium sized defects would look similar to the small defects if the spacing was increased to \qty{0.5}{in}. 
+Even with the \qty{0.25}{in} spacing, the smaller defects were difficult to detect especially in the tap tests with unbonds and delaminations. As seen in Figures \ref{fig:tt1_2d} and \ref{fig:tt2_2d}, the smaller defects were either completely undetectable or were extremely difficult to detect. If the tap spacing increased to \qty{0.5}{in}, our group suspects that this would have a profound effect on the ability to detect defects. As the smaller defects were barely detectable at \qty{0.25}{in} spacing, the medium sized defects would look similar to the small defects if the spacing was increased to \qty{0.5}{in}. 
 
 \textbf{Question 3}
 
