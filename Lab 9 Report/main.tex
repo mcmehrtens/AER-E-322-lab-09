@@ -45,6 +45,7 @@
 \usepackage{siunitx} % SI units
 \usepackage{csquotes} % Display Quote
 \usepackage{microtype} % Better line breaks
+\usepackage{booktabs} % Better tables
 
 \definecolor{commentsColor}{rgb}{0.497495, 0.497587, 0.497464}
 \definecolor{keywordsColor}{rgb}{0.000000, 0.000000, 0.635294}
@@ -191,15 +192,90 @@ In this lab, our group was tasked with experimenting with three different types 
 \end{itemize}
 
 \section{Hypothesis} \label{hypothesis}
-% TODO
+\textbf{Ultrasonic Testing}
+
+During the ultrasonic testing portion of the lab, we predict we will be able to locate the flaw by using the sequential search method where we first locate the transducer signal, then the front surface, then the back surface, and finally the flaw---which should be located just before the back surface signal.
+
+\textbf{Simulated Ultrasonic Testing}
+
+For the simulated ultrasonic testing portion of the lab, we predict we will have to do several trial runs to determine which variable most significantly impacts the SNR. From our experience in the ultrasonic testing lab, we predicted the water path and focal length would have the most significant impact on the SNR.
+
+\textbf{Eddy Current Testing}
+
+For the eddy current testing portion of the lab, we expect to be able to differentiate the depths of the flaws in the samples based on the length of the trace recorded by the EddyCation software. We also predict we will be able to differentiate the samples based on their traces due to variations in their electromagnetic properties.
+
+\textbf{Tap Testing}
+
+We predict the flaws in the honeycomb layer of the testing sample will be visible in the tap testing lab due to the variation in travel time of the testing probe. We expect the larger flaws to show up more clearly in the test since there is more area for the probe to capture.
 
 \chapter{Lab Work} \label{lab_work}
 \section{Variables} \label{variables}
 \subsection{Independent Variables} \label{variables-independent_variables}
-% TODO
+% TODO: Revise
+\textbf{Ultrasonic Testing}
+
+\begin{itemize}
+	\item Position of transducer: the result shown on the oscilloscope will be changed by where pulser is going for.
+	\item Distance between transducer and displacement:
+	\item Depth of water: In this lab, the depth is constant.
+	\item Distance between receiver and displacement: By changing the distance, focal length will be changed.
+	\item Pulser frequency: The ultrasonic wave goes through the specimen. If frequency is so high, the amplitude shown on oscilloscope will be bigger overall.
+\end{itemize}
+
+\textbf{Ultrasonic Testing Simulation}
+
+\begin{itemize}
+	\item Frequency: the frequency of ultrasonic pulser.
+	\item Transducer diameter:
+	\item Focal length: If the transducer is the focus type.
+	\item Center Frequency: the frequency at the center of the range of transducer frequency.
+	\item Bandwidth: A measure of the range of frequency in the beam.
+\end{itemize}
+
+\textbf{Eddy Current Testing}
+
+\begin{itemize}
+	\item Lift off speed: This speed contributes to the shape of the plot.
+	\item Material property: This property decides the shape of line on the plot.
+	\item High pass filter (HP): this value decide how low frequency is allowed. If frequency is higher than high pass filter, it will be removed from data. This value works for smoothing data.
+	\item Low pass filter (LP): As Low pass filter, the frequency less than low pass filter will be removed from data.
+	\item Frequency: In the surface crack detection, this value is recommended to set to below \qty{10}{\kilo\hertz}.
+	\item Gain: In this lab, gain is set as \qty{45}{\decibel}. This value determines the scale of plot as frequency.
+	\item Shape of specimen:
+\end{itemize}
+
+\textbf{Tap Testing}
+
+\begin{itemize}
+	\item The force for tapping: If we tap specimen too weakly, the tap head response errors on the cell.
+\end{itemize}
 
 \subsection{Dependent Variables} \label{variables-dependent_variables}
-% TODO
+% TODO: Revise
+\textbf{Ultrasonic Testing}
+
+\begin{itemize}
+	\item Defect amplitude: we will modify the scale of oscilloscope to check the shape of wave.
+\end{itemize} 
+
+\textbf{Ultrasonic Testing Simulation}
+
+\begin{itemize}
+	\item Defect amplitude: Defect amplitude shape will not be smoothed if the suitable values are not given to the independent variables.
+	\item Defect signal to Peak noise ratio: the ratio shows the gap between signal and noise.
+\end{itemize}
+
+\textbf{Eddy Current Testing}
+
+\begin{itemize}
+	\item Displacement: this is shown on the graph plotted while testing.
+\end{itemize}
+
+\textbf{Tap Testing}
+
+\begin{itemize}
+	\item Displacement: the result gotten by tapping will be shown on the screen when clicking graph or contour.
+\end{itemize} 
 
 \section{Work Assignments} \label{work_assignments}
 Refer to Table \ref{tbl:work_assignments} for the distribution of work during this lab.
@@ -274,7 +350,7 @@ Refer to Table \ref{tbl:work_assignments} for the distribution of work during th
 	\item Computer with UT\_SN\_Sim software.
 \end{itemize}
 
-\textbf{Eddy current testing}
+\textbf{Eddy Current Testing}
 \begin{itemize}
 	\item Computer with EddyCation software.
 	\item EddyCation interface box.
@@ -293,13 +369,273 @@ Refer to Table \ref{tbl:work_assignments} for the distribution of work during th
 \end{itemize}
 
 \section{Apparatus} \label{apparatus}
-% TODO
+\textbf{Ultrasonic Testing Apparatus}
+
+The ultrasonic testing apparatus is shown clearly in Figure \ref{fig:ultrasonic_apparatus}. The ultrasonic testing apparatus consists of a clear tank full of water with a metal puck placed at the bottom. The puck has a flaw within it---specifically, a circular hole that has been cut out of the bottom and then recovered. At the top of the tank, there is a transducer that is attached to a dual-axis track, allowing the transducer to move in two dimensions. A clamp allows the height of the transducer to be adjusted.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=4in]{images/ultrasonic_apparatus}
+	\caption{The ultrasonic testing apparatus.}
+	\label{fig:ultrasonic_apparatus}
+\end{figure}
+
+The transducer is connected to a pulser/receiver which is then connected to an oscilloscope that visualizes the pulses. Figure \ref{fig:oscilloscope} shows the main display of the oscilloscope.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=4in]{images/oscilloscope}
+	\caption{The display on the oscilloscope.}
+	\label{fig:oscilloscope}
+\end{figure}
+
+\textbf{Simulated Ultrasonic Testing}
+
+The UT\_SN\_Sim software was used for the ultrasonic simulation testing. The initial configuration of the software is shown in Figures \ref{fig:sim_1} through \ref{fig:sim_8}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=4in]{images/sim_1}
+	\caption{The units configuration page of the ultrasonic simulation software.}
+	\label{fig:sim_1}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=4in]{images/sim_2}
+	\caption{The probe configuration page of the ultrasonic simulation software.}
+	\label{fig:sim_2}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=4in]{images/sim_3}
+	\caption{The material \num{1} configuration page of the ultrasonic simulation software.}
+	\label{fig:sim_3}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=4in]{images/sim_4}
+	\caption{The material \num{2} configuration page of the ultrasonic simulation software.}
+	\label{fig:sim_4}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=4in]{images/sim_5}
+	\caption{The reference configuration page of the ultrasonic simulation software.}
+	\label{fig:sim_5}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=4in]{images/sim_6}
+	\caption{The inspection configuration page of the ultrasonic simulation software.}
+	\label{fig:sim_6}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=4in]{images/sim_7}
+	\caption{The simulation configuration page of the ultrasonic simulation software.}
+	\label{fig:sim_7}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=4in]{images/sim_8}
+	\caption{The dev configuration page of the ultrasonic simulation software.}
+	\label{fig:sim_8}
+\end{figure}
+
+\newpage
+
+\textbf{Eddy Current Testing}
+
+The eddy current testing apparatus consists of two aluminum samples labeled BKI and BKII and a variety of different metal pucks of different material. An EddyCation interface box is attached to a computer running the EddyCation software as well as an absolute probe that is used to perform the eddy current testing. The BKI sample will be tested right-side up and upside-down, but the BKII sample will be tested exclusively with the notches facing the table. The BKI and BKII samples are shown in Figure \ref{fig:eddy_current_apparatus} as well as the metal samples in the background.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=4in]{images/eddy_current_apparatus}
+	\caption{The BKI sample (front), BKII sample (middle), and metal samples (back) for the eddy current testing lab.}
+	\label{fig:eddy_current_apparatus}
+\end{figure}
+
+\textbf{Tap Testing}
+
+The tap testing will take place on a \qtyproduct{10.5x12}{in} honey comb defect area plate. The hand tapper is connected to an electronics box which is further connected to a computer running the CATT software. The clear grid is placed over the material to help the tester position their tap placements. The overall tap testing configuration is shown in Figure \ref{fig:tap_testing_apparatus} and the software configuration is shown in Figure \ref{fig:tap_testing_software}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=4in]{images/tap_testing_apparatus}
+	\caption{The tap testing lab apparatus.}
+	\label{fig:tap_testing_apparatus}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=4in]{images/tap_testing_software}
+	\caption{The software configuration for the tap testing lab.}
+	\label{fig:tap_testing_software}
+\end{figure}
 
 \section{Procedures} \label{procedures}
-% TODO
+\textbf{Ultrasonic Testing}
+
+First start by calculating how far the transducer face needs to be from the defect on the bottom face of the sample and adjust the height of the transducer accordingly. Twist the horizontal position knob to move across the time scale and see the waves. Adjust the vertical and horizontal position to clearly see the waves. From here, move the transducer along both the “x” and “y” axies of the track over the sample. There will be a clear change in waves, for our group the second wave being displayed on the oscilloscope. Observe how the wave changes to determine the edge of the defect. This will be located at the point of maximum volt amplitude. Measure the position of the transducer against a reference point and move the transducer until the other edge is found. Measure the position of the transducer once again. Take the difference between the two measurements and this give you the diameter of the defect in one direction. Repeat the same process but in the other direction to find “both” diameters.
+
+\textbf{Simulated Ultrasonic Testing}
+
+Turn on the simulator by clicking play as the first process. After some seconds, the home screen will be appeared. As the basic setting, we will modify some parameters. In simulation Tab, set Defect type to FBH and re-enter defect size to 1/64 inches. In material 1 tab, set the metal alloy type to nickel and enter grain size to 100 microns. In Inspection tab, set wave mode in metal to longitude mode. We can change the following parameters to get a suitable result: transducer type, transducer diameter, focal length, Cener frequency, water path, and Bandwidth. After setting parameters above and getting ready to execute test, click run simulation button, and we can see the result of test. At first, defect signal amplitude and grain noise amplitude will be shown on the top of the result view, using different y axis scale. On the middle, graph of signal noise ratio versus depth will be shown. Additionally, we can see the graphs of 2 A scan with different approach by clicking the point on the line shown on the top graph. We will have to repeat those process until we find the parameter dominating the result of plots.
+
+\textbf{Eddy Current Testing}
+
+Set up the testing software, then adjust the frequency below 10 KHz to compensate for the cracks being on the top of the BKI sample. Also adjust the phase angle so that it is tracing the left side of the resistance axis. Then adjust the gain to below 45 dB and the low pass bandwidth frequency to 15. Once all settings are correct, perform a lift off calibration to fine tune the phase angle and center the trace. Then slide the probe across the sample, changing the trace color after going over each crack to have each crack distinguishable.
+
+For testing the backside of the BKI sample, the frequency needs to be lowered slightly to have the probe be more sensitive to “deeper” cracks. The process is exactly the same as testing the front side of the sample for testing the back side. Adjust the gain and phase angle accordingly, then perform a lift off calibration. Then slide the probe across the sample, changing the color of the trace after each crack is passed. For the backside of the sample the gain may need to be raised slightly for the trace to be clearer.
+
+The BKII sample is only being tested on the back side. Follow the process described above, adjusting phase angle, frequency, and gain to get clear data. Then slide the probe along the sample and change the color of the trace to distinguish between each gap.
+
+To sort the metal samples, make the necessary adjustments to phase angle, frequency, and gain. Perform a lift off calibration on the first sample and center the trace. From here you can hop from sample to sample using the probe. Observe how each sample leaves a different trace.
+
+\textbf{Tap Testing}
+
+Firstly, set up the tap test software, and try a few gentle taps on the surface, holding the tap head on the metal part in the upper position. Take care not to tap strongly on the surface, or the tap head will be damaged and affect the test result. After checking, tape a plastic grid sheet on the specimen, adjusting the end of the cell we will measure. Before starting the test, click the test start button on the software while entering the column and the row number we will tap.
+
+Start to tap from the top and leftmost cell and continue by tapping a cell along a row. After tapping all cells in a row, move to the cell located leftmost in the next row, and continue to do it until the last row. When the test is finished, check whether tapping errors is shown on the screen, and fix errors by re-tapping the same cell. Stop the test by clicking on the button on the software after checking errors, plot the contour of defects, and save the figure as an image on a drive.   
 
 \section{Data} \label{data}
-% TODO
+\textbf{Ultrasonic Testing}
+
+For the ultrasonic testing lab, we calculated the optimal water path to be \qty{113.1}{\mm}. Based on this calculation, the time delta from the transducer pulse and the top surface was \qty{152.8}{\micro\second}. Since we know the thickness and wave travel speed through the sample material, we were able to calculate the time delta for the sample to be \qty{7.931}{\micro\second}. Adding these two time deltas together yielded \qty{160.7}{\micro\second}. Just before the pulse at \qty{160.7}{\micro\second} was the location of the defect signal. The script we used to calculate these values is shown in Appendix \ref{apdx:code}.
+
+\textbf{Simulated Ultrasonic Testing}
+
+
+
+\textbf{Eddy Current Testing}
+
+For the eddy current testing, we used the configurations shown in Table \ref{tbl:ec} for each test.
+
+\begin{table}[!htbp]
+\caption{Software configurations for each of the eddy current tests. Tests one and two used the BKI sample, test three used the BKII sample, and test four used the various metal samples.}
+\begin{center}
+	\begin{tabular}{cccccc}
+		\toprule
+		Test&Frequency (\unit{\kilo\hertz})&Gain (\unit{\decibel})&Phase (\unit{\degree})&LP Filter (\unit{\hertz})&HP Filter (\unit{\hertz})\\
+		\midrule
+		1&\num{5.0}&\num{50.6}&\num{-58.0}&\num{15}&\num{0}\\
+		2&\num{3.0}&\num{50.6}&\num{-32.0}&\num{8}&\num{0}\\
+		3&\num{3.0}&\num{29.6}&\num{-28.0}&\num{8}&\num{0}\\
+		4&\num{3.0}&\num{17.9}&\num{140.5}&\num{8}&\num{0}\\
+		\bottomrule
+	\end{tabular}
+\end{center}
+\label{tbl:ec}
+\end{table}
+
+The traces for the first test of sample BKI---with the defects open upwards---are shown in Figure \ref{fig:ec_bk1_up}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=6in]{images/graphs/eddy current testing/S4G2BK1-Upward}
+	\caption{The traces recorded from the EddyCation software for the BK1 sample with the defects open upwards.}
+	\label{fig:ec_bk1_up}
+\end{figure}
+
+The traces for the second test of sample BKI---with the defects open downwards---are shown in Figure \ref{fig:ec_bk1_down}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=6in]{images/graphs/eddy current testing/S4G2BK1-Downward}
+	\caption{The traces recorded from the EddyCation software for the BK1 sample with the defects open downwards.}
+	\label{fig:ec_bk1_down}
+\end{figure}
+
+The traces for the test of sample BKII are shown in Figure \ref{fig:ec_bk2}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=6in]{images/graphs/eddy current testing/S4G2BK2}
+	\caption{The traces recorded from the EddyCation software for the BK2 sample.}
+	\label{fig:ec_bk2}
+\end{figure}
+
+The traces for the metal sample sorting test are shown in Figure \ref{fig:ec_metal_sorting}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=6in]{images/graphs/eddy current testing/S4G2Metal2-labeled}
+	\caption{The traces recorded from the EddyCation software for the metal sorting testing. Each trace is labeled according to what metal it is (note: we may have misspelled some of the labels; our notes were not entirely clear).}
+	\label{fig:ec_metal_sorting}
+\end{figure}
+
+\textbf{Tap Testing}
+
+For the tap testing, we split the sample into two separate tests. The top half of the sample was tested with the first run and the bottom half of the sample was tested with the second run. The orientation of the clear grid and the software configuration for the first tap test run is shown in Figure \ref{fig:tt1_orientation}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=4in]{images/graphs/tap testing/S4G2tap1-orientation}
+	\caption{Orientation of the clear grid on the honeycomb sample in the first tap test (upper half).}
+	\label{fig:tt1_orientation}
+\end{figure}
+
+The results of this tap test are shown in Figures \ref{fig:tt1_grid}, \ref{fig:tt1_2d}, and \ref{fig:tt1_3d}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=4in]{images/graphs/tap testing/S4G2tap1-grid}
+	\caption{Grid results from the first tap test (upper half).}
+	\label{fig:tt1_grid}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=4in]{images/graphs/tap testing/S4G2tap1-2D}
+	\caption{2D visual results from the first tap test (upper half).}
+	\label{fig:tt1_2d}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=4in]{images/graphs/tap testing/S4G2tap1-3D}
+	\caption{3D visual results from the first tap test (upper half).}
+	\label{fig:tt1_3d}
+\end{figure}
+
+The orientation of the clear grid and the software configuration for the second tap test run is shown in Figure \ref{fig:tt2_orientation}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=4in]{images/graphs/tap testing/S4G2tap2-orientation}
+	\caption{Orientation of the clear grid on the honeycomb sample in the second tap test (lower half).}
+	\label{fig:tt2_orientation}
+\end{figure}
+
+The results of this tap test are shown in Figures \ref{fig:tt2_grid}, \ref{fig:tt2_2d}, and \ref{fig:tt2_3d}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=4in]{images/graphs/tap testing/S4G2tap2-grid}
+	\caption{Grid results from the second tap test (lower half).}
+	\label{fig:tt2_grid}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=4in]{images/graphs/tap testing/S4G2tap2-2D}
+	\caption{2D visual results from the second tap test (lower half).}
+	\label{fig:tt2_2d}
+\end{figure}
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=4in]{images/graphs/tap testing/S4G2tap2-3D}
+	\caption{3D visual results from the second tap test (lower half).}
+	\label{fig:tt2_3d}
+\end{figure}
 
 \chapter{Conclusion} \label{conclusion-chapter}
 \section{Analysis} \label{analysis}
@@ -390,4 +726,38 @@ Overall, our group gained valuable insight into which types of non-destructive t
 
 \printbibliography[heading=subbibintoc]
 \appendix
+\chapter{Code} \label{apdx:code}
+\begin{verbatim}
+% AER E 322 Lab 9 Spring 2023
+% Section 4 Group 2
+clear,clc,close all;
+
+u = symunit;
+F = 8*u.in; % [in]
+V_s = 0.58*u.cm/u.us; % [cm/us]
+V_w = 0.148*u.cm/u.us; % [cm/us]
+T = 23*u.mm; % [mm]
+
+L_1 = unitConvert(F - V_s / V_w * T, u.mm); % [mm]
+delta_t_top = 2 * L_1 / unitConvert(V_w, u.mm); % [us]
+delta_t_bot = 2 * unitConvert(T, u.cm) / V_s; % [us]
+
+delta_t = delta_t_top + delta_t_bot; % [us]
+
+fprintf("L_1 = %g [mm]\n" + ...
+    "delta_t_top = %g [us]\n" + ...
+    "delta_t_bot = %g [us]\n" + ...
+    "delta_t_top + delta_t_bot = %g [us]\n", ...
+    [double(separateUnits(L_1)), double(separateUnits(delta_t_top)), ...
+    double(separateUnits(delta_t_bot))], double(separateUnits(delta_t)));
+\end{verbatim}
+
+\textbf{Output:}
+
+\begin{verbatim}
+L_1 = 113.065 [mm]
+delta_t_top = 152.79 [us]
+delta_t_bot = 7.93103 [us]
+delta_t_top + delta_t_bot = 160.721 [us]
+\end{verbatim}
 \end{document}
