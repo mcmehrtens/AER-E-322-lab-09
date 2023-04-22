@@ -158,10 +158,37 @@
 
 \chapter{Pre-Lab} \label{pre-lab}
 \section{Introduction} \label{introduction}
-% TODO
+% TODO: Revise
+In this lab, our group was tasked with experimenting with three different types of non-destructive testing, ultrasonic testing, tap testing, simulated ultrasonic testing, and eddy current testing. Ultrasonic testing entailed finding the diameter of a defect near the bottom side of a metal plate using the volt wave amplitude on an oscilloscope. We calculated how far away the transducer face needed to be from the sample to ensure the defect was at the desired focal length of \qty{8}{in} and moved the transducer around to find the defect. For the simulated ultrasonic testing, our group changed variables in a computer program to see how each would affect the signal-to-noise ratio (SNR) overall. Our objective was to hold the amplitude of the SNR above \num{4.5} for as long as possible. Eddy current testing was performed on two different aluminum bar samples (BKI and BKII) with different defects and defect sizes. BKI had cuts that simulated cracks of depths ranging from \qtyrange{0.5}{1.5}{\mm}, whereas BKII had four machined slots, which reduced the thickness of the material to \qtylist{2;1.6;1.2;0.8}{\mm}. We also utilized eddy current testing to sort small metal samples based on the trace left from coming into contact with each sample. Finally, our group used tap testing to test a plate with three defects (delamination, unbonds, and crushed cores). We then observed the tap duration while tapping each defect area to see which defects provided the longest tap duration. The overall purpose of this lab was to introduce our group to non-destructive testing to see in what scenarios each form of testing was most effective. With this, this lab helped demonstrate how non-destructive testing can be a cost-efficient, effective way to test the longevity of a part in question.
 
 \section{Objectives} \label{objectives}
-% TODO
+% TODO: Revise
+\textbf{Ultrasonic Testing} 
+\begin{itemize}
+	\item Accurately predict the diameter of the defect.
+	\item Get familiar with Tektronix TDS 200B oscilloscope.
+	\item Correctly calculate the distance the transducer needs to be from the top face of the metal sample.
+\end{itemize}
+
+\textbf{Simulated Ultrasonic Testing}
+\begin{itemize}
+	\item Observe what settings affect the depth profile the most, \ie transducer type, transducer diameter, focal length, center frequency, bandwidth, and water path.
+	\item Get the signal-to-noise ratio to maintain above \num{4.5} for as long as possible for each hole location.
+\end{itemize}     
+
+\textbf{Eddy Current Testing}
+\begin{itemize}
+	\item Observe how different metal types will leave varied traces while coming into contact.
+	\item Observe where each crack is located in both the BKI and BKII samples.
+	\item Adjust the frequency for each testing scenario to ensure the best results.
+\end{itemize}
+
+\textbf{Tap Testing}
+\begin{itemize}
+	\item Observe how each type of defect affects the data.
+	\item Observe how to size of the defect area affects the data.
+	\item See how different defects affect the effectiveness of tap testing.
+\end{itemize}
 
 \section{Hypothesis} \label{hypothesis}
 % TODO
@@ -175,73 +202,100 @@
 % TODO
 
 \section{Work Assignments} \label{work_assignments}
-Refer to Table \ref{table:work_assignments} for the distribution of work during this lab.
+Refer to Table \ref{tbl:work_assignments} for the distribution of work during this lab.
 
 \begin{table}[!htbp]
 \caption{Work assignments for AER E 322 Lab 9.}
 \begin{center}
-	\begin{tabular}{| c | c | c | c |}
+	\begin{tabular}{|c|c|c|c|}
 		\hline
-		\multicolumn{1}{| c |}{\textbf{Task}} & \textbf{Matthew} & \textbf{Peter} & \textbf{Natsuki} \\
+		\multicolumn{1}{|c|}{\textbf{Task}}&\textbf{Matthew}&\textbf{Peter}&\textbf{Natsuki}\\
 		\hline
-		\multicolumn{4}{| c |}{\textit{Lab Work}} \\
+		\multicolumn{4}{|c|}{\textit{Lab Work}}\\
 		\hline
-		Data Recording & & & \\
+		Data Recording&X&X&X\\
 		\hline
-		Exp. Setup & & & \\
+		Exp. Setup&X&X&X\\
 		\hline
-		Exp. Work & & & \\
+		Exp. Work&X&X&X\\
 		\hline
-		Exp. Clean-Up & & & \\
+		Exp. Clean-Up&X&X&X\\
 		\hline
-		\multicolumn{4}{| c |}{\textit{Post Lab}} \\
+		\multicolumn{4}{|c|}{\textit{Report}}\\
 		\hline
-		\multicolumn{4}{| c |}{\textit{Report}} \\
+		Introduction&&X&\\
 		\hline
-		Introduction & & & \\
+		Objectives&&X&\\
 		\hline
-		Objectives & & & \\
+		Hypothesis&X&&\\
 		\hline
-		Hypothesis & & & \\
+		Variables&&&X\\
 		\hline
-		Variables & & & \\
+		Materials&&X&\\
 		\hline
-		Materials & & & \\
+		Apparatus&X&X&\\
 		\hline
-		Apparatus & & & \\
+		Procedures&X&&X\\
 		\hline
-		Procedures & & & \\
+		Data&X&X&\\
 		\hline
-		Data & & & \\
+		Analysis&X&X&X\\
 		\hline
-		Analysis & & & \\
+		Conclusion&X&X&\\
 		\hline
-		Conclusion & & & \\
+		References&X&X&X\\
 		\hline
-		References & & & \\
+		Appendix&X&&\\
 		\hline
-		Appendix & & & \\
+		Revisions&X&X&\\
 		\hline
-		Revisions & & & \\
-		\hline
-		Editing & & & \\
+		Editing&X&&\\
 		\hline
 	\end{tabular}
 \end{center}
-\label{table:work_assignments}
+\label{tbl:work_assignments}
 \end{table}
 
 \section{Materials} \label{materials}
-% TODO
+% TODO: Revise
+\textbf{Ultrasonic Testing}
+\begin{itemize}
+	\item Tektronix TDS 200B oscilloscope.
+	\item Transducer.
+	\item Tank full of a medium (water for this lab).
+	\item Metal sample.
+	\item Two axis track for the transducer to move along.
+	\item Ruler.
+	\item C-clamp to secure transducer to track.
+\end{itemize}
+
+\textbf{Simulated Ultrasonic Testing}
+\begin{itemize}
+	\item Computer with UT\_SN\_Sim software.
+\end{itemize}
+
+\textbf{Eddy current testing}
+\begin{itemize}
+	\item Computer with EddyCation software.
+	\item EddyCation interface box.
+	\item Absolute probe and probe cable.
+	\item Varying material metal disks.
+	\item BKI and BKII samples.
+\end{itemize}
+
+\textbf{Tap Testing}
+\begin{itemize}
+	\item Computer with CATT system.
+	\item Hand tap cable.
+	\item Electronics box.
+	\item \qtyproduct{10.5x12}{in} honey comb defect area plate.
+	\item Grid with \qty{0.25}{in} spacing.
+\end{itemize}
 
 \section{Apparatus} \label{apparatus}
 % TODO
 
 \section{Procedures} \label{procedures}
-\subsection{Setup} \label{procedures-setup}
-% TODO
-
-\subsection{Cleanup} \label{procedures-cleanup}
 % TODO
 
 \section{Data} \label{data}
@@ -249,10 +303,90 @@ Refer to Table \ref{table:work_assignments} for the distribution of work during 
 
 \chapter{Conclusion} \label{conclusion-chapter}
 \section{Analysis} \label{analysis}
-% TODO
+\subsection{Tap Testing} \label{tap_testing}
+% TODO: Revise
+% TODO: FIX FIGURE REFERENCES
+\textbf{Question 1}
+
+Areas with delamination and core unbonds were tested in tap test \num{1}; the crushed core was tested in tap test \num{2}. As seen in Figure <INSERT FIG REFERENCE> above, delamination was much easier to detect than core unbonds. There is a clear detection of the first two defect areas in the delamination zone, but the third was undetectable. In the defect areas where there were core unbonds, there is a slight section where the tap duration was somewhere between \qtyrange{415}{495}{\micro\second}. This is especially seen in the largest defect area, but as the test continued, the smallest defect area was completely undetectable. Moving to tap test two, the defect areas where much more detectible. Starting from the left defect region, the two largest defect areas were extremely noticeable. It is clear to see that the medium sized defect had a largest duration of \qtyrange{638}{688}{\micro\second}, and the largest area had a duration of \qtyrange{738}{788}{\micro\second}. Moving to the right side of the defect area, all three defects were detected. The smallest had a barely noticeable defect, but was still present with a duration of \qtyrange{438}{488}{\micro\second}. The other two defect areas had a duration of \qtyrange{738}{788}{\micro\second}. This shows that the defects in the .187 area were much more difficult to detect than that of the defects in the .25 defect area. Alongside this, delamination was easier to detect than the core unbonds. Overall, the crushed core was the easiest to detect of all three defects.
+
+\textbf{Question 2}
+
+Even with the \qty{0.25}{in} spacing, the smaller defects were difficult to detect especially in the tap tests with unbonds and delaminations. As seen in Figures <INSERT FIG REFERENCE> and <INSERT FIG REFERENCE>, the smaller defects were either completely undetectable or were extremely difficult to detect. If the tap spacing increased to \qty{0.5}{in}, our group suspects that this would have a profound effect on the ability to detect defects. As the smaller defects were barely detectable at \qty{0.25}{in} spacing, the medium sized defects would look similar to the small defects if the spacing was increased to \qty{0.5}{in}. 
+
+\textbf{Question 3}
+
+Delaminations were more detectable due to the surface being tapped and not attached to the core. The top skin being disconnected allows for there to be more ``give'' when being tapped. With the top skin flexing more, there is a longer contact time between the surface of the plate and the hand tap cable. The unbonded core will be a less detectable defect than the delamination. This is due to the bottom surface of the plate not being directly impacted by the hand-held cable. The table supports the bottom of the plate, and there will be little ``give,'' making the defects harder to detect.
+
+\subsection{Eddy Current Testing} \label{eddy_current_testing}
+% TODO: Revise
+\textbf{Question 4}
+
+One possible reason for lift off calibration is to ensure the phase angle is set correctly. In the lab we were told to lift the probe off of the surface if the part, then set it back down to adjust the phase angle. The phase angle was changed in each testing scenario to get the lift off trace to align with the left branch of the resistance axis.
+
+\textbf{Question 5}
+
+We adjusted the frequency to be higher to detect hidden cracks on the face with the cracks, but decreased it when testing the back side of the sample. As the frequency increases, the depth of penetration decreases. This makes finding the cracks on the surface much easier due to the fact the equipment is more sensitive to shallow defects. For testing the defects on the back side of the sample, we decreased the frequency to have the equipment be more sensitive to defects deeper in the sample.
+
+\subsection{Ultrasonic Testing} \label{ultrasonic_testing}
+\textbf{Question 6}
+
+Yes, a water path distance of \qty{4.5}{in} is indeed accurate enough given the configuration of the ultrasonic test. In our experiment, we calculated the optimal water path given the focal length. We began by referring to Equation \ref{eqn:focal_law} from the AER E \num{322} lecture notes \cite{lecture_notes}.
+\begin{align}\label{eqn:focal_law}
+	F&=Z_1+\frac{\nu_2}{\nu_1}Z_2
+\end{align}
+where $F$ is the focal distance, $Z_1$ is the water path, $Z_2$ is the thickness of the specimen, $\nu_1$ is the wave speed through medium one (water), and $\nu_2$ is the wave speed through medium two (metal). To calculate the optimal water path, we arrange the equation as shown in Equation \ref{eqn:water_path}.
+\begin{align}\label{eqn:water_path}
+	Z_1&=F-\frac{\nu_2}{\nu_1}Z_2
+\end{align}
+Substituting in values, we find
+\begin{align*}
+	Z_1&=\qty{8}{in}-\frac{\qty{0.58}{\cm\per\micro\second}}{\qty{0.148}{\cm\per\micro\second}}\cdot\qty{23}{\mm}\cdot\frac{\qty{1}{in}}{\qty{25.4}{\mm}}\\
+	&=\qty{4.45}{in}\text{ or }\qty{113.1}{\mm}
+\end{align*}
+Therefore, the optimal water path is \qty{4.45}{in} or \qty{113.1}{\mm}. This is approximately equal to a water path of \qty{4.5}{in} as stated in the problem statement. If we use \qty{4.5}{in} as the water path, we find that the optimal focal length is
+\begin{align*}
+	F&=Z_1+\frac{\nu_2}{\nu_1}Z_2\\
+	&=\qty{4.5}{in}+\frac{0.58}{0.148}\cdot\qty{23}{\mm}\cdot\frac{\qty{1}{in}}{\qty{25.4}{\mm}}\\
+	&=\qty{8.049}{in}
+\end{align*}
+Using a water path of \qty{4.5}{in} yields an optimal focal length with \qty{0.61}{\percent} variation from the actual optimal focal length of \qty{8}{in}. This is plenty of accuracy for the needs of this lab.
+
+\textbf{Question 7}
+
+We speculate the reason the zero-to-zero amplitude profile grossly overestimates the size of the flaw is due to how the waves interact at the edge of the flaws. When the waves are bouncing completely off the flaw, the amplitude of the wave bouncing off the flaw are at the peak amplitude. However, as the transducer is moved around the flaw, only part of the waves are bouncing back from the flaw (the other part continuing on to the bottom edge of the sample). This partial reflection reduces the amplitude. But the amplitude of the flaw reflection doesn't reach zero until the entirety of the transducer pulses are clear of the flaw.
+
+In other words, even if a very small part of the transducer waves are reflecting off the flaw, there will be a non-zero amplitude indicating a flaw. This is demonstrated in Figure \ref{fig:flaw_detection}.
+
+\begin{figure}[htbp]
+	\centering
+	\includegraphics[width=4in]{images/flaw_detection_sketch}
+	\caption{A sketch of the transducer waves reflecting on only part of the flaw.}
+	\label{fig:flaw_detection}
+\end{figure}
+
+Because the flaw still shows up on the oscilloscope well after the center of the transducer has cleared the flaw, if you calculate the size of the flaw, you would be overestimating the size of the flaw. In lab, we were told to use the \qty{50}{\percent} amplitude rule as a general guide for estimating the size.
+
+The peak amplitude we found was \qty{3.40}{\volt}. By measuring how far in each direction we had to move to find \qty{50}{\percent} of the peak amplitude (\qty{1.70}{\volt}), we calculated the flaw diameter to be \qty{6}{\mm}, which is about \qty{20}{\percent} off the actual diameter of the flaw (\qty{5}{\mm}). Given we were approximating the cut-off points of the flaw diameter, this amount of error is acceptable.
+
+\subsection{Ultrasonic Simulation} \label{ultrasonic_simulation}
+\textbf{Question 8}
+
+We ran seventeen different simulations to determine which variables most significantly impacted the SNR. In the end, we were unable to determine qualitatively which variables had the most impact. Based on our testing, we speculate the transducer diameter and the center frequency are the most and second-most important variables in increasing the SNR. We noticed a significant increase in the SNR when we increased the transducer diameter and another fairly significant increase when we increased the center frequency.
+
+The other variables had mixed effects on the SNR. Changing the water path seemed to move the SNR peak to the left or right and we didn't observer the focal length having a reliably positive or negative effect on the SNR.
+
+We suspect the reason it was so difficult to identity which parameters most directly relate to the SNR is because they are linked. The water path and the focal length are related by the focal law shown in Equation \ref{eqn:focal_law}, so it seems logical that these parameters will affect the SNR independently of each other, \ie depending on the water path, increasing or decreasing the water path may increase or decrease the SNR.
+
+\subsection{NDE and Design} \label{nde_and_design}
+% TOOD: Revise
+\textbf{Question 9}
+
+Eddy current testing with a decreased frequency is the best option for this testing scenario. Eddy current testing is the best option for testing these cracks, where this is due to the ability to test the tank from the outside and detect a crack on the inside of the tank. A decreased frequency is best due to the fact that it is more sensitive to ``deeper'' defects. Eddy current testing would be perfect for this scenario due to these factors. This was demonstrated while testing the backside of BKI and BKII samples in the lab. Tap testing finds defects like delamination, core un-bonds, and crushed cores more effectively. This means that tap testing would be useless for finding cracks propagating inside a tank. Ultrasonic testing also would not work solely since the tested tank is sealed on all sides. While the tank may be full of a medium perfect for ultrasonic testing, it is impossible.
 
 \section{Conclusion} \label{conclusion-section}
-% TODO
+% TODO: Revise
+Overall, our group gained valuable insight into which types of non-destructive testing were best for each given scenario. We struggled with aspects of the lab, such as the simulated ultrasonic testing, because we initially changed too many variables. This caused our group to run the test \num{17} times. Seventeen tests were performed to find the best mixture of changeable values we could. Regarding eddy current testing, our group could easily see the difference between each type of metal we were tasked to sort. While we could not say exactly what each metal was, there was a clear difference between all samples, with one having a noticeably larger trace than all the others. The BKI and BKII samples also provided valuable insight into how eddy current testing can be used to test for cracks on both the front side and backside of a part. Our group determined that the best way to test for the cracks inside a waste storage tank was to use eddy current testing because ultrasonic testing requires submerging the transducer face. Tap testing was ruled out as well due to the inability of tap testing to detect cracks. Tap testing is best used for layered composites or materials, making it practically useless. Ultimately, we determined eddy current testing to be the best form of non-destructive testing for this scenario because of its ability to detect cracks on the backside of a material and to test for defects on the outside of the material. Much valuable information was learned from tap testing as well. While performing testing, we did not know exactly what each defect type meant, but we could see how each defect resulted in vastly different tap durations. The crushed core had the largest tap duration, and we could detect many more defect areas than the unbonded and delamination defect areas. After learning what each defect meant, it was clear why our data appeared as is.
 
 \printbibliography[heading=subbibintoc]
 \appendix
